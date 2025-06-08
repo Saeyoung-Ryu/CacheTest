@@ -1,0 +1,15 @@
+﻿@page "/localStorageTestPage"
+@inject LocalStorage LocalStorage
+
+<PageTitle>Local Storage Test</PageTitle>
+
+<h1>Local Storage Test</h1>
+
+<MudButton Variant="Variant.Filled" OnClick="SetCultureLocalStorageBtnAsync">Set Culture</MudButton>
+
+@code {
+    private async Task SetCultureLocalStorageBtnAsync()
+    {
+        await LocalStorage.SaveCultureAsync("TestCulture");
+    }
+}

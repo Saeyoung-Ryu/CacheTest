@@ -1,0 +1,13 @@
+// ¿¹: wwwroot/data/sample-data.json
+[
+  {
+    "id": 1,
+    "name": "Alice",
+    "score": 100
+  },
+  {
+    "id": 2,
+    "name": "Bob",
+    "score": 80
+  }
+]
