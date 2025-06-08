@@ -1,6 +1,8 @@
 ﻿@inherits LayoutComponentBase
 @inject LocalStorage LocalStorage
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JS
+@using DataModel
 
 <div class="page">
     <div class="sidebar">
@@ -33,15 +35,29 @@
     protected override async Task OnInitializedAsync()
     {
         Console.WriteLine("Main Layout 함수 호출 시작");
-        // 비동기 초기화 로직 (HttpClient 호출 등)
 
+        // Local Storage 값 불러오기/저장 예시
         var culture = await LocalStorage.GetCultureAsync();
         Console.WriteLine($"Culture : {culture}");
 
-        var currentURL = NavigationManager.BaseUri;
-        Console.WriteLine($"Base URL : {currentURL}");
+        // IndexedDB 값 저장 예시
+        var http = new HttpClient
+        {     
+            BaseAddress = new Uri(NavigationManager.BaseUri) 
+        };
 
-        await Task.Delay(1000); // 예시
+        try
+        {
+            var dataString = await http.GetStringAsync("sampleData.json");
+
+            Console.WriteLine(dataString);
+
+            await JS.InvokeVoidAsync("indexedDbFunctions.saveData", "sampleDataList", dataString);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"데이터 로드 실패: {ex.Message}");
+        }
     }
 
 }

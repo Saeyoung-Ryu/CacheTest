@@ -1,13 +1,102 @@
-// ��: wwwroot/data/sample-data.json
 [
   {
     "id": 1,
     "name": "Alice",
-    "score": 100
+    "course": "English"
   },
   {
     "id": 2,
+    "name": "Kim",
+    "course": "Science"
+  },
+  {
+    "id": 3,
     "name": "Bob",
-    "score": 80
+    "course": "Math"
+  },
+  {
+    "id": 4,
+    "name": "Jane",
+    "course": "English"
+  },
+  {
+    "id": 5,
+    "name": "Tom",
+    "course": "Science"
+  },
+  {
+    "id": 6,
+    "name": "Linda",
+    "course": "Math"
+  },
+  {
+    "id": 7,
+    "name": "Steve",
+    "course": "English"
+  },
+  {
+    "id": 8,
+    "name": "Nina",
+    "course": "Science"
+  },
+  {
+    "id": 9,
+    "name": "Mark",
+    "course": "Math"
+  },
+  {
+    "id": 10,
+    "name": "Sara",
+    "course": "English"
+  },
+  {
+    "id": 11,
+    "name": "James",
+    "course": "Science"
+  },
+  {
+    "id": 12,
+    "name": "Laura",
+    "course": "Math"
+  },
+  {
+    "id": 13,
+    "name": "George",
+    "course": "English"
+  },
+  {
+    "id": 14,
+    "name": "Helen",
+    "course": "Science"
+  },
+  {
+    "id": 15,
+    "name": "Robert",
+    "course": "Math"
+  },
+  {
+    "id": 16,
+    "name": "Anna",
+    "course": "English"
+  },
+  {
+    "id": 17,
+    "name": "Paul",
+    "course": "Science"
+  },
+  {
+    "id": 18,
+    "name": "Tina",
+    "course": "Math"
+  },
+  {
+    "id": 19,
+    "name": "David",
+    "course": "English"
+  },
+  {
+    "id": 20,
+    "name": "Emma",
+    "course": "Science"
   }
 ]
