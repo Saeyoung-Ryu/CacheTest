@@ -1,0 +1,29 @@
+﻿@page "/indexeddb"
+@inject IJSRuntime JS
+
+<h3>IndexedDB 예제</h3>
+
+<button @onclick="OpenDb">DB 열기</button>
+<button @onclick="SaveToDb">데이터 저장</button>
+<button @onclick="LoadFromDb">데이터 불러오기</button>
+
+<p>결과: @result</p>
+
+@code {
+    private string? result;
+
+    private async Task OpenDb()
+    {
+        await JS.InvokeVoidAsync("indexedDbFunctions.openDb");
+    }
+
+    private async Task SaveToDb()
+    {
+        await JS.InvokeVoidAsync("indexedDbFunctions.saveData", "myKey", "Blazor에서 저장된 값");
+    }
+
+    private async Task LoadFromDb()
+    {
+        result = await JS.InvokeAsync<string>("indexedDbFunctions.getData", "myKey");
+    }
+}

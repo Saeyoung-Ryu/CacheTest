@@ -1,4 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@inject LocalStorage LocalStorage
+@inject NavigationManager NavigationManager
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -31,6 +34,13 @@
     {
         Console.WriteLine("Main Layout 함수 호출 시작");
         // 비동기 초기화 로직 (HttpClient 호출 등)
+
+        var culture = await LocalStorage.GetCultureAsync();
+        Console.WriteLine($"Culture : {culture}");
+
+        var currentURL = NavigationManager.BaseUri;
+        Console.WriteLine($"Base URL : {currentURL}");
+
         await Task.Delay(1000); // 예시
     }
 
